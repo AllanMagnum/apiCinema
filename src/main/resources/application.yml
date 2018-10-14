@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: virtual-store
+  profiles:
+    active: local
+  datasource:
+    continue-on-error: false
+    driver-class-name: org.postgresql.Driver
+    name: virtual-store-db
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/virtual-store-db
+  data:
+    jpa:
+      database: POSTGRES
+      database-platform: POSTGRES
+    jta:
+      enabled: true
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    check-change-log-location: false
+    default-schema: VTE
+    drop-first: true
+    url: jdbc:postgresql://localhost:5432/virtual-store-db
+    user: postgres
+    password: postgres

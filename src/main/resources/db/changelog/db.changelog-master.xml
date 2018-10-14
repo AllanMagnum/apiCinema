@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+
+    <include file="classpath:db/changelog/scripts/db.changelog-01-10-13-2018-tables.sql"/>
+    <include file="classpath:db/changelog/scripts/db.changelog-02-10-13-2018-tables.sql"/>
+    <include file="classpath:db/changelog/scripts/db.changelog-03-10-13-2018-inserts.sql"/>
+    <include file="classpath:db/changelog/scripts/db.changelog-04-10-13-2018-inserts.sql"/>
+    <include file="classpath:db/changelog/scripts/db.changelog-05-10-13-2018-tables.sql"/>
+    <include file="classpath:db/changelog/scripts/db.changelog-06-10-13-2018-inserts.sql"/>
+
+</databaseChangeLog>
+

@@ -1,0 +1,12 @@
+--liquibase formatted sql
+--changeset allan:01
+--comment: create movie table
+CREATE TABLE VTE.MOVIE (
+    ID_MOVIE SERIAL PRIMARY KEY NOT NULL,
+    CREATION_DATE TIMESTAMP WITH TIME ZONE NOT NULL,
+    CATEGORY VARCHAR(20) NOT NULL,
+    NAME VARCHAR(50) NOT NULL,
+    SINOPSE VARCHAR(5000) NOT NULL
+);
+
+--rollback DROP TABLE VTE.MOVIE;
