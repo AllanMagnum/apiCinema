@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: virtual-store-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: ./postgres/data
+    volumes:
+    - ${HOME}/Docker/postgres/initdb/:/docker-entrypoint-initdb.d/
+    - ${HOME}/Docker/postgres/data/:/data/postgres
+    ports:
+    - "5432:5432"
+    networks:
+    - postgres
+
+  pgadmin:
+    links:
+    - postgres:postgres
+    image: fenglc/pgadmin4
+    environment:
+      DEFAULT_USER: admin
+      DEFAULT_PASSWORD: admin
+    volumes:
+    - ${HOME}/Docker/postgres/pgadmin:/root/.pgadmin
+    ports:
+    - "5050:5050"
+    networks:
+    - postgres
+
+networks:
+  postgres:
+    driver: bridge

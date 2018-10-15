@@ -1,0 +1,11 @@
+--liquibase formatted sql
+--changeset allan:02
+--comment: create movie theater table
+CREATE TABLE VTE.MOVIE_THEATER (
+    ID_MOVIE_THEATER SERIAL PRIMARY KEY NOT NULL,
+    NAME VARCHAR(50) NOT NULL,
+    STREET VARCHAR(150) NOT NULL,
+    CITY VARCHAR(50) NOT NULL,
+    STATE VARCHAR(2) NOT NULL
+);
+--rollback DROP TABLE VTE.MOVIE_THEATER;
